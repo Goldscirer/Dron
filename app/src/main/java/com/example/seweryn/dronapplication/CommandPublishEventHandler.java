@@ -7,11 +7,5 @@ package com.example.seweryn.dronapplication;
 public interface CommandPublishEventHandler
 {
     /** */
-    void sendNotepadCommand();
-
-    /** */
-    void sendRebootCommand();
-
-    /** */
     void reconnect();
 }

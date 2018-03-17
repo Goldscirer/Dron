@@ -7,31 +7,32 @@
     tools:context="com.example.seweryn.dronapplication.activity_connect">
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="384dp"
-        android:layout_height="542dp"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="match_parent"
+        android:layout_height="158dp"
+        android:orientation="vertical">
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/ipAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="ip address" />
+            android:hint="ip address"
+            android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/buttonReconnect"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onButtonClick"
             android:text="Reconnect" />
 
         <TextView
             android:id="@+id/debugLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0" />
+            android:layout_weight="1" />
     </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>

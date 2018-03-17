@@ -1,6 +1,7 @@
 package com.example.seweryn.dronapplication;
 
 import android.content.Context;
+import android.util.Log;
 
 import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.IMqttActionListener;
@@ -15,10 +16,11 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
  * Created by Mateusz on 16.08.2017.
  */
 
-public class MqttConfiguration
+public class MqttConfiguration extends activity_connect
 {
+
     /** */
-    public static final String BROKER_IP_ADDRESS = "tcp://192.168.1.4:1883";
+    public  String BROKER_IP_ADDRESS;
 
     /** */
     public static final String CLIENT_ID = "mobile";
@@ -35,6 +37,12 @@ public class MqttConfiguration
     /** */
     private MqttAndroidClient mqttAndroidClient;
 
+
+    public void setIpAddress(String ip){
+        BROKER_IP_ADDRESS = ip;
+        Log.e("ip",BROKER_IP_ADDRESS);
+    };
+
     /** */
     public MqttConfiguration(final Context applicationContext, final DebugEventHandler debugEventHandler)
     {
@@ -47,7 +55,7 @@ public class MqttConfiguration
     {
         mqttAndroidClient = new MqttAndroidClient(
                 applicationContext,
-                MqttConfiguration.BROKER_IP_ADDRESS,
+                BROKER_IP_ADDRESS,
                 MqttConfiguration.CLIENT_ID);
 
         mqttAndroidClient.setCallback(mqttCallbackExtended);
