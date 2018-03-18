@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DronApplication</string>
+    <string name="title_activity_configuration">activity_configuration</string>
 </resources>
