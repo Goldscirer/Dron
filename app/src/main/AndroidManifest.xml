@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.seweryn.dronapplication">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,20 +21,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity_configuration_dron">
+        <activity android:name=".ActivityConfigurationDron">
             <intent-filter>
-                <action android:name="com.example.seweryn.dronapplication.activity_configuration_dron" />
+                <action android:name="com.example.seweryn.dronapplication.ActivityConfigurationDron" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity_connect">
+        <activity android:name=".ActivityConnect">
             <intent-filter>
-                <action android:name="com.example.seweryn.dronapplication.activity_connect" />
+                <action android:name="com.example.seweryn.dronapplication.ActivityConnect" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <service android:name="org.eclipse.paho.android.service.MqttService"></service>
+
     </application>
 
 </manifest>

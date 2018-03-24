@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.seweryn.dronapplication.activity_configuration_dron">
+    tools:context="com.example.seweryn.dronapplication.ActivityConfigurationDron">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -16,11 +16,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/editText2"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="number" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/downloadConfiguration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="downloadConfiguration"
+                android:text="Download configuration" />
+
+            <TextView
+                android:id="@+id/configurationText"
+                android:layout_width="match_parent"
+                android:layout_height="154dp" />
+        </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

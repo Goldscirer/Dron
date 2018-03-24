@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.seweryn.dronapplication.activity_connect">
+    tools:context="com.example.seweryn.dronapplication.ActivityConnect">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,13 +20,22 @@
             android:hint="ip address"
             android:inputType="textPersonName" />
 
+        <EditText
+            android:id="@+id/topicName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="podaj topic"
+            android:inputType="textPersonName" />
+
         <Button
             android:id="@+id/buttonReconnect"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onButtonClick"
-            android:text="Reconnect" />
+            android:text="Connect" />
 
         <TextView
             android:id="@+id/debugLabel"
