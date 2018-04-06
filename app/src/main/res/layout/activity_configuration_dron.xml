@@ -6,32 +6,279 @@
     android:layout_height="match_parent"
     tools:context="com.example.seweryn.dronapplication.ActivityConfigurationDron">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <Button
-                android:id="@+id/downloadConfiguration"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="downloadConfiguration"
-                android:text="Download configuration" />
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/configurationText"
-                android:layout_width="match_parent"
-                android:layout_height="154dp" />
+                <Button
+                    android:id="@+id/downloadConfiguration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="downloadConfiguration"
+                    android:text="Download configuration"/>
+
+                <TextView
+                    android:id="@+id/configurationText"
+                    android:layout_width="match_parent"
+                    android:layout_height="154dp" />
+
+                <TextView
+                    android:id="@+id/thrust"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Thrust"
+                    android:textSize="50px"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/kp4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kp" />
+
+                <EditText
+                    android:id="@+id/editText13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/ki4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ki" />
+
+                <EditText
+                    android:id="@+id/editText14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/kd4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kd:" />
+
+                <EditText
+                    android:id="@+id/editText15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/tf4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tf:" />
+
+                <EditText
+                    android:id="@+id/editText16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/yaw"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="50px"
+                    android:textStyle="bold"
+                    android:text="Yaw" />
+
+                <TextView
+                    android:id="@+id/kp3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kp" />
+
+                <EditText
+                    android:id="@+id/editText9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/ki3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ki" />
+
+                <EditText
+                    android:id="@+id/editText10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/kd3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kd:" />
+
+                <EditText
+                    android:id="@+id/editText11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/tf3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tf:" />
+
+                <EditText
+                    android:id="@+id/editText12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/roll"
+                    android:textSize="50px"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Roll" />
+
+                <TextView
+                    android:id="@+id/kp2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kp" />
+
+                <EditText
+                    android:id="@+id/editText5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/ki2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ki" />
+
+                <EditText
+                    android:id="@+id/editText6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/kd2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kd:" />
+
+                <EditText
+                    android:id="@+id/editText7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/tf2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tf:" />
+
+                <EditText
+                    android:id="@+id/editText8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/pitch"
+                    android:textSize="50px"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pitch"
+                    tools:text="Pitch" />
+
+                <TextView
+                    android:id="@+id/kp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/ki"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ki" />
+
+                <EditText
+                    android:id="@+id/editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/kd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kd:" />
+
+                <EditText
+                    android:id="@+id/editText3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/tf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tf:" />
+
+                <EditText
+                    android:id="@+id/editText4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
+
 </android.support.constraint.ConstraintLayout>

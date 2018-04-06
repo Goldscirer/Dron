@@ -21,7 +21,7 @@ public class ActivityConfigurationDron extends AppCompatActivity {
     }
 
     public void downloadConfiguration(View v){
-        ActivityConnect.TOPIC_NAME = "ANDROID/CONFIGURATION/GET";
+        ActivityConnect.TOPIC_NAME = "CONFIG/ANDROID/GET";
         ActivityConnect.MESSAGES = " ";
 
         if(ActivityConnect.IP_ADDRESS != null)
@@ -29,14 +29,13 @@ public class ActivityConfigurationDron extends AppCompatActivity {
             MqttConnection conn = new MqttConnection(this);
             if(conn.Connect() == true)
             {
-
+                //configurationText.setText(MessageConnectionHandler.CONF_TEXT);
             }
         }
         else
         {
             Toast.makeText( this, "You must set up ip address!", Toast.LENGTH_LONG).show();
         }
-
 
     }
 }

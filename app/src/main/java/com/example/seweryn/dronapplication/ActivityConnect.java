@@ -20,7 +20,7 @@ import java.io.UnsupportedEncodingException;
 public class ActivityConnect extends AppCompatActivity {
 
     static public String IP_ADDRESS;
-    static public String TOPIC_NAME;
+    static public String TOPIC_NAME = "CONFIG/ANDROID/POST";
     static public String MESSAGES;
 
     @Override
