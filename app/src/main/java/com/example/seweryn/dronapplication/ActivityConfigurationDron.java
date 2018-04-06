@@ -29,8 +29,7 @@ public class ActivityConfigurationDron extends AppCompatActivity {
             MqttConnection conn = new MqttConnection(this);
             if(conn.Connect() == true)
             {
-                connectionHandler.sub();
-                //configurationText.setText(MessageConnectionHandler.CONF_TEXT);
+
             }
         }
         else

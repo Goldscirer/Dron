@@ -43,7 +43,7 @@ public class MessageConnectionHandler implements IMqttActionListener {
         Toast.makeText(view, "connected!", Toast.LENGTH_LONG).show();
         Log.d("id", "onSuccess");
         pub(client);
-
+        sub();
 
     }
 
