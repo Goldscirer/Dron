@@ -29,7 +29,7 @@ public class Dron extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent("com.example.seweryn.dronapplication.activity_configuration_dron");
+                        Intent intent = new Intent("com.example.seweryn.dronapplication.ActivityConfigurationDron");
                         startActivity(intent);
                     }
                 }
@@ -39,7 +39,7 @@ public class Dron extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent("com.example.seweryn.dronapplication.activity_connect");
+                        Intent intent = new Intent("com.example.seweryn.dronapplication.ActivityConnect");
                         startActivity(intent);
                     }
                 }
