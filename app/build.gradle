@@ -33,7 +33,11 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     //compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.0'
-    compile('org.eclipse.paho:org.eclipse.paho.android.service:1.0.2') {
+    compile 'com.googlecode.json-simple:json-simple:1.1'
+    compile 'org.modelmapper:modelmapper:0.7.4'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.7.2'
+    compile('org.eclipse.paho:org.eclipse.paho.android.service:1.0.2')
+            {
         exclude module: 'support-v4'
     }
 }
