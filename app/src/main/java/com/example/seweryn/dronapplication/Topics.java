@@ -14,6 +14,7 @@ public class Topics
     /** */
     public static final String GET = "CONFIG/ANDROID/GET";
     public static final String POST = "CONFIG/ANDROID/POST";
+    public static final String UPDATE = "CONFIG/ANDROID/UPDATE";
     /** */
     public static final String abc = "abc";
 

@@ -33,11 +33,6 @@
                     android:text="Download configuration"/>
 
                 <TextView
-                    android:id="@+id/configurationText"
-                    android:layout_width="match_parent"
-                    android:layout_height="154dp" />
-
-                <TextView
                     android:id="@+id/thrust"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -52,7 +47,7 @@
                     android:text="Kp" />
 
                 <EditText
-                    android:id="@+id/editText13"
+                    android:id="@+id/editRotor_1_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -65,7 +60,7 @@
                     android:text="Ki" />
 
                 <EditText
-                    android:id="@+id/editText14"
+                    android:id="@+id/editRotor_1_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -78,7 +73,7 @@
                     android:text="Kd:" />
 
                 <EditText
-                    android:id="@+id/editText15"
+                    android:id="@+id/editRotor_1_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -91,7 +86,7 @@
                     android:text="Tf:" />
 
                 <EditText
-                    android:id="@+id/editText16"
+                    android:id="@+id/editRotor_1_4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -112,7 +107,7 @@
                     android:text="Kp" />
 
                 <EditText
-                    android:id="@+id/editText9"
+                    android:id="@+id/editRotor_2_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -125,7 +120,7 @@
                     android:text="Ki" />
 
                 <EditText
-                    android:id="@+id/editText10"
+                    android:id="@+id/editRotor_2_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -138,7 +133,7 @@
                     android:text="Kd:" />
 
                 <EditText
-                    android:id="@+id/editText11"
+                    android:id="@+id/editRotor_2_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -151,7 +146,7 @@
                     android:text="Tf:" />
 
                 <EditText
-                    android:id="@+id/editText12"
+                    android:id="@+id/editRotor_2_4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -172,7 +167,7 @@
                     android:text="Kp" />
 
                 <EditText
-                    android:id="@+id/editText5"
+                    android:id="@+id/editRotor_3_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -185,7 +180,7 @@
                     android:text="Ki" />
 
                 <EditText
-                    android:id="@+id/editText6"
+                    android:id="@+id/editRotor_3_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -198,7 +193,7 @@
                     android:text="Kd:" />
 
                 <EditText
-                    android:id="@+id/editText7"
+                    android:id="@+id/editRotor_3_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -211,7 +206,7 @@
                     android:text="Tf:" />
 
                 <EditText
-                    android:id="@+id/editText8"
+                    android:id="@+id/editRotor_3_4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -233,6 +228,7 @@
                     android:text="Kp" />
 
                 <EditText
+                    android:id="@+id/editRotor_4_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -245,7 +241,7 @@
                     android:text="Ki" />
 
                 <EditText
-                    android:id="@+id/editText"
+                    android:id="@+id/editRotor_4_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -258,7 +254,7 @@
                     android:text="Kd:" />
 
                 <EditText
-                    android:id="@+id/editText3"
+                    android:id="@+id/editRotor_4_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -271,11 +267,18 @@
                     android:text="Tf:" />
 
                 <EditText
-                    android:id="@+id/editText4"
+                    android:id="@+id/editRotor_4_4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/uploadDronConfiguration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="UPLOAD DRON CONFIGURATION"
+                    android:onClick="uploadDownloadConfiguration"/>
 
             </LinearLayout>
         </LinearLayout>
