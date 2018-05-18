@@ -44,6 +44,12 @@ public class MessageConnectionHandler implements IMqttActionListener {
     public static  String rotor_1_1;
     public ActivityConfigurationDron dornConf;
     static ConfigurationMessage JSON;
+    private static MessageConnectionHandler handler;
+
+
+    public static MessageConnectionHandler getHandler() {
+        return handler;
+    }
 
     public MessageConnectionHandler(MqttAndroidClient client, AppCompatActivity view, String topic) {
     this.client = client;
@@ -158,44 +164,44 @@ public class MessageConnectionHandler implements IMqttActionListener {
         /* YAW */
 
         tEdit = (EditText)view.findViewById(R.id.editRotor_2_1);
-        tEdit.setText(message.Rotor_1_1, TextView.BufferType.EDITABLE);
+        tEdit.setText(message.Rotor_2_1, TextView.BufferType.EDITABLE);
 
         tEdit = (EditText)view.findViewById(R.id.editRotor_2_2);
-        tEdit.setText(message.Rotor_1_2, TextView.BufferType.EDITABLE);
+        tEdit.setText(message.Rotor_2_2, TextView.BufferType.EDITABLE);
 
         tEdit = (EditText)view.findViewById(R.id.editRotor_2_3);
-        tEdit.setText(message.Rotor_1_3, TextView.BufferType.EDITABLE);
+        tEdit.setText(message.Rotor_2_3, TextView.BufferType.EDITABLE);
 
         tEdit = (EditText)view.findViewById(R.id.editRotor_2_4);
-        tEdit.setText(message.Rotor_1_4, TextView.BufferType.EDITABLE);
+        tEdit.setText(message.Rotor_2_4, TextView.BufferType.EDITABLE);
 
         /* Roll */
 
         tEdit = (EditText)view.findViewById(R.id.editRotor_3_1);
-        tEdit.setText(message.Rotor_1_1, TextView.BufferType.EDITABLE);
+        tEdit.setText(message.Rotor_3_1, TextView.BufferType.EDITABLE);
 
         tEdit = (EditText)view.findViewById(R.id.editRotor_3_2);
-        tEdit.setText(message.Rotor_1_2, TextView.BufferType.EDITABLE);
+        tEdit.setText(message.Rotor_3_2, TextView.BufferType.EDITABLE);
 
         tEdit = (EditText)view.findViewById(R.id.editRotor_3_3);
-        tEdit.setText(message.Rotor_1_3, TextView.BufferType.EDITABLE);
+        tEdit.setText(message.Rotor_3_3, TextView.BufferType.EDITABLE);
 
         tEdit = (EditText)view.findViewById(R.id.editRotor_3_4);
-        tEdit.setText(message.Rotor_1_4, TextView.BufferType.EDITABLE);
+        tEdit.setText(message.Rotor_3_4, TextView.BufferType.EDITABLE);
 
         /* Pitch */
 
         tEdit = (EditText)view.findViewById(R.id.editRotor_4_1);
-        tEdit.setText(message.Rotor_1_1, TextView.BufferType.EDITABLE);
+        tEdit.setText(message.Rotor_4_1, TextView.BufferType.EDITABLE);
 
         tEdit = (EditText)view.findViewById(R.id.editRotor_4_2);
-        tEdit.setText(message.Rotor_1_2, TextView.BufferType.EDITABLE);
+        tEdit.setText(message.Rotor_4_2, TextView.BufferType.EDITABLE);
 
         tEdit = (EditText)view.findViewById(R.id.editRotor_4_3);
-        tEdit.setText(message.Rotor_1_3, TextView.BufferType.EDITABLE);
+        tEdit.setText(message.Rotor_4_3, TextView.BufferType.EDITABLE);
 
         tEdit = (EditText)view.findViewById(R.id.editRotor_4_4);
-        tEdit.setText(message.Rotor_1_4, TextView.BufferType.EDITABLE);
+        tEdit.setText(message.Rotor_4_4, TextView.BufferType.EDITABLE);
     }
 
     public ConfigurationMessage getJsonObject() {

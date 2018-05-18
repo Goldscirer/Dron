@@ -41,6 +41,15 @@ public class ActivityConfigurationDron extends AppCompatActivity {
     public void uploadDownloadConfiguration(View v) {
         ActivityConnect.TOPIC_NAME = Topics.UPDATE;
         Log.d("tag", "TO jest update => " + MessageConnectionHandler.JSON.Rotor_1_1);
+        Log.d("tag", ActivityConnect.TOPIC_NAME);
+
+        if(ActivityConnect.IP_ADDRESS != null)
+        {
+        }
+        else
+        {
+            Toast.makeText( this, "You must set up ip address!", Toast.LENGTH_LONG).show();
+        }
 
 
     }
