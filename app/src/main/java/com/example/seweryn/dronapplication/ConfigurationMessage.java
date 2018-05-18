@@ -24,12 +24,4 @@ public class ConfigurationMessage {
     public  String Rotor_4_2;
     public  String Rotor_4_3;
     public  String Rotor_4_4;
-
-    public String getRotor_1_1() {
-        return Rotor_1_1;
-    }
-
-    public void setRotor_1_1(String rotor_1_1) {
-        Rotor_1_1 = rotor_1_1;
-    }
 }

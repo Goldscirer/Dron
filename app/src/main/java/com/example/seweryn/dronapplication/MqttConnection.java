@@ -1,6 +1,5 @@
 package com.example.seweryn.dronapplication;
 
-import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 
 import org.eclipse.paho.android.service.MqttAndroidClient;
@@ -26,7 +25,8 @@ public class MqttConnection {
 
         try {
             IMqttToken token = client.connect();
-            token.setActionCallback(new MessageConnectionHandler(client, view, ActivityConnect.TOPIC_NAME));
+            MessageConnectionHandler.build(client, view);
+            token.setActionCallback(MessageConnectionHandler.getHandler(view));
             return true;
         } catch (MqttException e) {
             e.printStackTrace();
