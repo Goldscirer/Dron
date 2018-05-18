@@ -35,31 +35,37 @@ public class MessageConnectionHandler implements IMqttActionListener {
 
     private  MqttAndroidClient client;
 
-    private final AppCompatActivity view;
-    private final String topic;
+    private AppCompatActivity view;
     static public  String CONF_TEXT = " ";
-    private TextView configurationText;
-    public static EditText tEdit;
 
-    public static  String rotor_1_1;
-    public ActivityConfigurationDron dornConf;
-    static ConfigurationMessage JSON;
+
     private static MessageConnectionHandler handler;
 
+    private ConfigurationMessageListener configurationMessageListener;
 
-    public static MessageConnectionHandler getHandler() {
+    private  MessageConnectionHandler(MqttAndroidClient client, AppCompatActivity view) {
+        this.client = client;
+        this.view = view;
+    }
+
+    public void setView(AppCompatActivity view) {
+        this.view = view;
+    }
+
+    public void setConfigurationMessageListener(ConfigurationMessageListener configurationMessageListener) {
+        this.configurationMessageListener = configurationMessageListener;
+    }
+
+    public static MessageConnectionHandler getHandler(AppCompatActivity view) {
         return handler;
     }
 
-    public MessageConnectionHandler(MqttAndroidClient client, AppCompatActivity view, String topic) {
-    this.client = client;
-    this.view = view;
-    this.topic = topic;
-    }
-
-    public MessageConnectionHandler(AppCompatActivity  view, String topic) {
-        this.view = view;
-        this.topic = topic;
+    public static void build(MqttAndroidClient client, AppCompatActivity view)
+    {
+        if (handler == null)
+        {
+            handler = new MessageConnectionHandler(client, view);
+        }
     }
 
     @Override
@@ -67,7 +73,6 @@ public class MessageConnectionHandler implements IMqttActionListener {
         Log.d("tag", "dupa3");
         Toast.makeText(view, "connected!", Toast.LENGTH_LONG).show();
         Log.d("id", "onSuccess");
-        pub(client);
         sub();
     }
 
@@ -78,11 +83,10 @@ public class MessageConnectionHandler implements IMqttActionListener {
 
     }
 
-
-    public void pub(MqttAndroidClient client){
-        String message = ActivityConnect.MESSAGES;
+    public void pub(final String message, final String topic2){
         try {
-            client.publish(topic, message.getBytes(),0,false);
+            Log.d("guzik", topic2);
+            client.publish(topic2, message.getBytes(),0,false);
         } catch (MqttException e) {
             e.printStackTrace();
         }
@@ -109,11 +113,7 @@ public class MessageConnectionHandler implements IMqttActionListener {
              @Override
              public void messageArrived(String topic, MqttMessage message) throws Exception {//potem beda rozne topici i if bedziesz sprawdzal jaka wiadomosc na jaki topic przyszla
                  Log.d("tag", "dupa");
-                 CONF_TEXT = new String(message.getPayload());
-
-                 /*configurationText = (TextView)view.findViewById(R.id.configurationText);
-                 configurationText.setText(MessageConnectionHandler.CONF_TEXT);*/
-                 getMessage(CONF_TEXT);
+                 configurationMessageListener.handleMessage(new String(message.getPayload()));
              }
 
              @Override
@@ -122,91 +122,4 @@ public class MessageConnectionHandler implements IMqttActionListener {
              }
          });
     }
-
-    public void getMessage(String message) {
-
-
-        try {
-            ObjectMapper m = new ObjectMapper();
-            ConfigurationMessage myClass = m.readValue(message,ConfigurationMessage.class);
-            Log.d("tag","aa => " + myClass.Rotor_1_1);
-            Log.d("tag","aa => " );
-            setFieldConfiguration(myClass);
-            JSON = myClass;
-
-
-        } catch (JsonParseException e) {
-            e.printStackTrace();
-        } catch (JsonMappingException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void setFieldConfiguration(ConfigurationMessage message) {
-
-         /* Thrust */
-
-
-         tEdit = (EditText)view.findViewById(R.id.editRotor_1_1);
-        tEdit.setText(message.Rotor_1_1, TextView.BufferType.EDITABLE);
-
-        tEdit = (EditText)view.findViewById(R.id.editRotor_1_2);
-        tEdit.setText(message.Rotor_1_2, TextView.BufferType.EDITABLE);
-
-        tEdit = (EditText)view.findViewById(R.id.editRotor_1_3);
-        tEdit.setText(message.Rotor_1_3, TextView.BufferType.EDITABLE);
-
-        tEdit = (EditText)view.findViewById(R.id.editRotor_1_4);
-        tEdit.setText(message.Rotor_1_4, TextView.BufferType.EDITABLE);
-
-        /* YAW */
-
-        tEdit = (EditText)view.findViewById(R.id.editRotor_2_1);
-        tEdit.setText(message.Rotor_2_1, TextView.BufferType.EDITABLE);
-
-        tEdit = (EditText)view.findViewById(R.id.editRotor_2_2);
-        tEdit.setText(message.Rotor_2_2, TextView.BufferType.EDITABLE);
-
-        tEdit = (EditText)view.findViewById(R.id.editRotor_2_3);
-        tEdit.setText(message.Rotor_2_3, TextView.BufferType.EDITABLE);
-
-        tEdit = (EditText)view.findViewById(R.id.editRotor_2_4);
-        tEdit.setText(message.Rotor_2_4, TextView.BufferType.EDITABLE);
-
-        /* Roll */
-
-        tEdit = (EditText)view.findViewById(R.id.editRotor_3_1);
-        tEdit.setText(message.Rotor_3_1, TextView.BufferType.EDITABLE);
-
-        tEdit = (EditText)view.findViewById(R.id.editRotor_3_2);
-        tEdit.setText(message.Rotor_3_2, TextView.BufferType.EDITABLE);
-
-        tEdit = (EditText)view.findViewById(R.id.editRotor_3_3);
-        tEdit.setText(message.Rotor_3_3, TextView.BufferType.EDITABLE);
-
-        tEdit = (EditText)view.findViewById(R.id.editRotor_3_4);
-        tEdit.setText(message.Rotor_3_4, TextView.BufferType.EDITABLE);
-
-        /* Pitch */
-
-        tEdit = (EditText)view.findViewById(R.id.editRotor_4_1);
-        tEdit.setText(message.Rotor_4_1, TextView.BufferType.EDITABLE);
-
-        tEdit = (EditText)view.findViewById(R.id.editRotor_4_2);
-        tEdit.setText(message.Rotor_4_2, TextView.BufferType.EDITABLE);
-
-        tEdit = (EditText)view.findViewById(R.id.editRotor_4_3);
-        tEdit.setText(message.Rotor_4_3, TextView.BufferType.EDITABLE);
-
-        tEdit = (EditText)view.findViewById(R.id.editRotor_4_4);
-        tEdit.setText(message.Rotor_4_4, TextView.BufferType.EDITABLE);
-    }
-
-    public ConfigurationMessage getJsonObject() {
-         Log.d("tag", "getJSON =>" + JSON);
-         return JSON;
-    }
-
 }
