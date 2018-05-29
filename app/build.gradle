@@ -38,6 +38,6 @@ dependencies {
     compile 'com.fasterxml.jackson.core:jackson-databind:2.7.2'
     compile('org.eclipse.paho:org.eclipse.paho.android.service:1.0.2')
             {
-        exclude module: 'support-v4'
-    }
+                exclude module: 'support-v4'
+            }
 }

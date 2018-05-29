@@ -37,6 +37,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Configuration" />
+
+            <Button
+                android:id="@+id/buttonRemote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Remote Control" />
         </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
