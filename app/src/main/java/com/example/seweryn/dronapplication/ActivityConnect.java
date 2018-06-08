@@ -5,16 +5,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
-
-import org.eclipse.paho.android.service.MqttAndroidClient;
-import org.eclipse.paho.client.mqttv3.IMqttActionListener;
-import org.eclipse.paho.client.mqttv3.IMqttToken;
-import org.eclipse.paho.client.mqttv3.MqttClient;
-import org.eclipse.paho.client.mqttv3.MqttException;
-import org.eclipse.paho.client.mqttv3.MqttMessage;
-
-import java.io.UnsupportedEncodingException;
 
 
 public class ActivityConnect extends AppCompatActivity {
@@ -33,9 +23,7 @@ public class ActivityConnect extends AppCompatActivity {
 
     public void setParameters() {
         EditText ipText = (EditText) findViewById(R.id.ipAddress);
-        EditText topicText = (EditText) findViewById(R.id.topicName);
         IP_ADDRESS = "tcp://" + ipText.getText().toString() + ":1883";
-        TOPIC_NAME = topicText.getText().toString();
         MESSAGES = "connection test";
     }
 

@@ -1,6 +1,7 @@
 package com.example.seweryn.dronapplication;
 
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -8,6 +9,9 @@ import android.hardware.SensorManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -16,24 +20,37 @@ import java.util.Arrays;
 
 public class ActivityRemoteControl extends AppCompatActivity implements SensorEventListener {
 
+    private static Button button_stop_send;
+
+    private SensorManager sensorMenager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_remote_control);
+        if (ActivityConnect.IP_ADDRESS != null) {
+            pilot();
+        } else {
+            Toast.makeText(this, "You must set up ip address!", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(ActivityRemoteControl.this, ActivityConnect.class);
+            startActivity(intent);
+        }
+    }
 
-        pilot();
+    public void onButtonClickStop() {
+        Log.d("tag", "BUTTON CLICKED!!!!!!!!!");
+        sensorMenager.unregisterListener(this);
+        finish();
     }
 
     void pilot() {
-        SensorManager sensorMenager = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
+        sensorMenager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 
 
+        Sensor sensor_1 = sensorMenager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
 
 
-        Sensor sensor_1 = sensorMenager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-
-
-        sensorMenager.registerListener(this, sensor_1, SensorManager.SENSOR_DELAY_FASTEST);
+        sensorMenager.registerListener(this, sensor_1, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
     @Override
@@ -41,13 +58,7 @@ public class ActivityRemoteControl extends AppCompatActivity implements SensorEv
         MessageConnectionHandler connectionHandler = MessageConnectionHandler.getHandler(this);
         String JSON;
 
-        /*try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }*/
-
-        RemoteControlMessage message= new RemoteControlMessage();
+        RemoteControlMessage message = new RemoteControlMessage();
 
         message.x_axis = sensorEvent.values[0];
         message.y_axis = sensorEvent.values[1];

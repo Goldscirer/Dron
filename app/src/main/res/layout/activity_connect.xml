@@ -17,17 +17,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:hint="ip address"
-            android:inputType="textPersonName" />
-
-        <EditText
-            android:id="@+id/topicName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="podaj topic"
-            android:inputType="textPersonName" />
+            android:inputType="number|numberDecimal"
+            android:digits="0123456789."
+            android:hint="ip address" />
 
         <Button
             android:id="@+id/buttonReconnect"

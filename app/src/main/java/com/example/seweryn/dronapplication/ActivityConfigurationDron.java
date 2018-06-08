@@ -1,5 +1,6 @@
 package com.example.seweryn.dronapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -39,6 +40,8 @@ public class ActivityConfigurationDron extends AppCompatActivity implements Conf
         else
         {
             Toast.makeText( this, "You must set up ip address!", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(ActivityConfigurationDron.this,ActivityConnect.class);
+            startActivity(intent);
         }
     }
 
@@ -58,11 +61,11 @@ public class ActivityConfigurationDron extends AppCompatActivity implements Conf
 
             connectionHandler.pub(jsonInString, Topics.UPDATE);
         }
-
-
         else
         {
             Toast.makeText( this, "You must set up ip address!", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(ActivityConfigurationDron.this,ActivityConnect.class);
+            startActivity(intent);
         }
     }
 

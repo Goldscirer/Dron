@@ -12,10 +12,10 @@ import java.util.List;
 public class Topics
 {
     /** */
-    public static final String GET = "CONFIG/ANDROID/GET";
-    public static final String POST = "CONFIG/ANDROID/POST";
-    public static final String UPDATE = "CONFIG/ANDROID/UPDATE";
-    public static final String REMOTE = "REMOTE/ANDROID/POST";
+    public static final String GET = "DRON/CONFIG/ANDROID/GET";
+    public static final String POST = "DRON/CONFIG/ANDROID/POST";
+    public static final String UPDATE = "DRON/CONFIG/ANDROID/UPDATE";
+    public static final String REMOTE = "DRON/PILOT";
     /** */
     public static final String abc = "abc";
 
